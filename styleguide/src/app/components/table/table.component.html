@@ -1,0 +1,66 @@
+<div class="style-table" role="table" aria-label="Destinations" [class.table-min-height]="setMinHeight">
+    <app-loader *ngIf="!isLoaded"></app-loader>
+    <div class="flex-table header text-14-L-T400-HEV" role="rowgroup">
+        <div class="flex-row p-1" [ngStyle]="{'width':header.calculatedwidth}" [class.first]="first" role="columnheader"
+            *ngFor="let header of headers; let first=first" (click)="onHeaderClick(header)">
+            <img class="mr-2 cell-image" *ngIf="header.image" [src]="header.transformedImage" alt="" />
+            <span class="header-value" [class.asc]="selectedHeader === header && header.sort == sort.ascending"
+                [class.desc]="selectedHeader === header && header.sort == sort.descending"
+                *ngIf="!header.image">{{header.value}}</span>
+        </div>
+    </div>
+    <div class="styleguide-divider"></div>
+    <div class="position-relative">
+        <div *ngIf="tableData?.rows?.length; else noData;">
+            <span class="d-flex" *ngFor="let row of tableData.rows; let i=index">
+                <div *ngIf="row.actions?.length" class="action-item-image" (click)="displayActions(i)">
+                    <img [src]="'images/actions_list_vertical.svg' | assetUrl" alt="action_list">
+                </div>
+                <div class="dropdown-drawer" *ngIf="selectedRowId == i && !closeAction">
+                    <app-table-actions [actionItems]="row.actions" [isCardClosed]="closeAction"
+                        (closeClick)="closeActionMenu()" [moduleName]="moduleName"></app-table-actions>
+                </div>
+                <a class="flex-table flex-nowrap text-14-L-B400-REG pb-2 tbale-link" role="rowgroup"
+                    (click)="onRowClick(row)" [ngClass]="row.id ? 'link' : '' ">
+                    <div class="flex-row p-1" [ngStyle]="{'width': cell.calculatedwidth}" role="cell"
+                        *ngFor="let cell of row.cells; let first=first" (click)="onRowClick('')">
+                        <span class="material-icons status-icon align-middle mr-2" [class]="cell.color"
+                            *ngIf="cell.color && !cell.iconShowAfter">circle</span>
+                        <img class="mr-2 cell-image" *ngIf="cell.color && !cell.iconShowAfter" src="cell.image"
+                            alt="" />
+                        <span class="align-middle text-break button-download" [class.disable]="disableAllButtons"
+                            *ngIf="cell.clickable" (click)="onButtonClick(cell.payload)">{{cell.value}}</span>
+                        <span class="align-middle text-break" *ngIf="!cell.clickable">{{cell.value}}
+                            <span
+                                class="material-icons status-icon align-middle mr-2 purple ng-star-inserted cursor-pointer"
+                                *ngIf="cell.clearAfter" (click)="onCellClick(row.id)">clear</span>
+                        </span>
+                        <img class="ml-2 cell-image" *ngIf="cell.color && cell.iconShowAfter" src="cell.image" alt="" />
+                        <span class="material-icons status-icon align-middle ml-2" [class]="cell.color"
+                            *ngIf="cell.color && cell.iconShowAfter">circle</span>
+                        <ng-container *ngIf="cell?.image && cell.images?.length">
+                            <img class="mr-2 cell-image" *ngFor="let image of cell.images" [src]="image" alt="">
+                        </ng-container>
+                    </div>
+                </a>
+            </span>
+            <div [ngClass]="isExportRequired ? 'icon-set-export' : 'icon-set'" *ngIf="tableData.totalCount">
+                <ng-container *ngIf="isExportRequired">
+                    <button class="btn export-icon" (click)="onExportClick()">
+                        <img [src]="images/export.svg | assetUrl" alt="export outline" />
+                        <p class="btn-text">Export to CSV</p>
+                    </button>
+                </ng-container>
+                <div>
+                    <button class="btn material-icons pagination-icon" (click)="onPreviousPageClick()"
+                        [disabled]="tableData.pageNumber === 1">arrow_left</button>
+                    <span class="text-12-L-B400-REG pt-1"> showing records {{fromCount}} to {{toCount}} of
+                        {{tableData.totalCount}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noData>
+        <app-no-data *ngIf="isLoaded"></app-no-data>
+    </ng-template>
+</div>

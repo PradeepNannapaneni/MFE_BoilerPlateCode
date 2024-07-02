@@ -1,0 +1,25 @@
+@import "./colors";
+
+.sft100 {
+    background-color: $teal-t100;
+}
+
+.sbg220 {
+    border: 1px solid $grey-g400;
+}
+
+.sbg220-bottom {
+    border-bottom: 1px solid $grey-g400;
+}
+
+.sbt220-bottom {
+    border-bottom: 1px solid $teal-t400;
+}
+
+.sbg300 {
+    border-top: 1px solid $grey-g400;
+}
+
+.grey-4-light {
+    background-color: $grey-g000;
+}

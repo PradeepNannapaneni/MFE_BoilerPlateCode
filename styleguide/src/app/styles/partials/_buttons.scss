@@ -1,0 +1,17 @@
+@import "./colors";
+@import "./text-styles";
+
+.button-primary-active {
+    @extend .text-16-C-B400-HEV;
+    width: $btnWidth;
+    height: $btnHeight;
+    border-radius: 0px;
+    background-color: $yellow-y400;
+}
+
+.button-secondary-active {
+    @extend .text-16-C-W400-HEV;
+    width: $btnWidth;
+    height: $btnHeight;
+    border-radius: 0px;
+}

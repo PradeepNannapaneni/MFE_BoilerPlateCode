@@ -1,0 +1,153 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$styleguide-primary: mat.define-palette(mat.$indigo-palette);
+$styleguide-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$styleguide-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$styleguide-theme: mat.define-light-theme((color: (primary: $styleguide-primary,
+                accent: $styleguide-accent,
+                warn: $styleguide-warn,
+            )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($styleguide-theme);
+
+@import "./partials/colors";
+@import "./partials/text-styles";
+@import "./partials/fill";
+@import "./partials/layer-styles";
+@import "./partials/forms";
+@import "./partials/buttons";
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@mixin divider-margin-border {
+    margin: 0 5px;
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+.teal-100 {
+    background-color: $teal-t100;
+}
+
+.teal-300 {
+    background-color: $teal-t300;
+}
+
+.grey-400 {
+    background-color: $grey-g400;
+}
+
+.styleguide-divider {
+    border-top: 1.5px solid $grey-g700;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.styleguide-divider-vertical {
+    &-teal {
+        @include divider-margin-border;
+        border-color: $teal-t300;
+    }
+
+    &-black {
+        @include divider-margin-border;
+        border-color: $black-b400;
+    }
+
+    &-grey {
+        @include divider-margin-border;
+        background-color: $grey-g400;
+    }
+}
+
+.styleguide-dialog {
+    overflow-y: auto;
+}
+
+.styleguide-chevron {
+    color: $grey-g400;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+::placeholder {
+    font-size: 16px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursor {
+    &-pointer {
+        cursor: pointer;
+    }
+
+    &-not-allowed {
+        cursor: not-allowed;
+    }
+
+    &-default {
+        cursor: default;
+    }
+
+    &-auto {
+        cursor: auto;
+    }
+}
+
+.summary-card-container {
+    .styleguide-divider-vertical-teal {
+        flex-grow: 0.5px;
+    }
+}
+
+.card-row {
+    padding-bottom: 40px;
+}
+
+.summary-card-header {
+    padding-bottom: 13px;
+}
+
+.summary-card-value {
+    padding: 15px 0px;
+
+    span {
+        vertical-align: middle;
+    }
+}
+
+.summary-card-val {
+    padding-top: 13px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

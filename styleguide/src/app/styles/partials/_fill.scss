@@ -1,0 +1,49 @@
+@import "./colors";
+
+.purple {
+    color: $purple-u400;
+
+    &-background {
+        background-color: $purple-u400;
+    }
+}
+
+.pink {
+    color: $pink-p400;
+
+    &-background {
+        background-color: $pink-p400;
+    }
+}
+
+.orange {
+    color: $orange-O400;
+
+    &-background {
+        background-color: $orange-O400;
+    }
+}
+
+.green {
+    color: $green-g400;
+
+    &-background {
+        background-color: $green-g400;
+    }
+}
+
+.aqua {
+    color: $aqua-a400;
+
+    &-background {
+        background-color: $aqua-a400;
+    }
+}
+
+.red {
+    color: $red-r400;
+
+    &-background {
+        background-color: $red-r400;
+    }
+}

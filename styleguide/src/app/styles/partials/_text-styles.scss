@@ -1,0 +1,55 @@
+@import "./colors";
+@import "./mixins";
+@import "./variables";
+
+.text-12-L-B400-REG {
+    @include text-style($black-b400, 12px);
+}
+
+.text-14-L-B400-REG {
+    @include text-style($black-b400, 14px);
+}
+
+.text-14-L-B400-MED {
+    @include text-style($black-b400, 14px, "Mark Pro Medium");
+}
+
+.text-16-L-B400-REG {
+    @include text-style($black-b400, 16px);
+}
+
+.text-16-L-B400-MED {
+    @include text-style($black-b400, 16px, "Mark Pro Medium");
+}
+
+.text-16-L-B400-BLD {
+    @include text-style($black-b400, 16px, 700);
+}
+
+.text-18-L-B400-MED {
+    @include text-style($black-b400, 18px, "Mark Pro Medium");
+}
+
+.text-16-C-G500-MED {
+    @include text-style($grey-g500, 16px, "Mark Pro Medium", $text-align: center);
+}
+
+.text-16-L-B400-HEV {
+    @include text-style($black-b400, 16px, "Mark Pro Heavy");
+}
+
+.text-16-C-B400-HEV {
+    @include text-style($black-b400, 16px, "Mark Pro Heavy", $text-align: center);
+}
+
+.text-16-C-W400-HEV {
+    @include text-style($white-w400, 16px, "Mark Pro Heavy", $text-align: center);
+}
+
+.text-18-L-B400-REG {
+    @include text-style($black-b400, 18px);
+}
+
+.text-20-L-B400-REG {
+    @include text-style($black-b400, 20px);
+}

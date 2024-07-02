@@ -1,0 +1,17 @@
+<div class="rectangle bg-white">
+    <div class="d-flex flex-row pl-2 pt-2">
+        <div class="p-2"><img [src]="'images/actions_list_vertical.svg' | assetUrl" alt="action_list" /></div>
+        <div class="p-2 trxt-2--L-B400-BLD actions"><span>Actions</span></div>
+        <div class="p-2 ml-auto"><img [src]="'images/cross_button.svg'|assetUrl" alt="cross_button"
+                (click)="closeActions()"></div>
+    </div>
+    <div class="pl-3 pt-2">
+        <div>
+            <ul class="list-unstyled" *ngFor="let item of actionItems; let last = last;">
+                <li> <a class="text-14-L-B400-REG table-link" [href]="item.url"
+                        (click)="onTrack(item.name)">{{item.name}}</a></li>
+                <div [ngClass]="last ? '':'divider'"></div>
+            </ul>
+        </div>
+    </div>
+</div>

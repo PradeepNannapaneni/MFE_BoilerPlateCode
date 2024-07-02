@@ -1,0 +1,8 @@
+@mixin text-style($color, $size: 14px, $fontFamily: 'Mark Pro Regular', $fontStyle: normal, $letterSpacing: 0, $text-align: left) {
+    color: $color;
+    font-size: $size;
+    font-style: $fontStyle;
+    letter-spacing: $letterSpacing;
+    text-align: $text-align;
+    opacity: 1;
+}

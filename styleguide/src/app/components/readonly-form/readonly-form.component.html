@@ -1,0 +1,29 @@
+<div class="form d-flex flex-column w-100">
+    <div class="form-section" [style.order]="item.order" *ngFor="let item of readOnlyFormData">
+        <ng-container *ngIf="item.display">
+            <div class="form-header">
+                <span class="text-20-L-T400-HEV">
+                    {{item.sectionName}}
+                </span>
+                <span class="panel text-14-B400-REG float-right" (click)="item.collapsed = !item.collapsed">
+                    <span class="float-right">
+                        {{item.collapsed ? 'show More' : 'show Less'}}
+                        <span class="styleguide-chevron ml-1 fa"
+                            [class]="item.collapsed ? 'fa-chevron-up' : 'fa-chevron-down' "></span>
+                    </span>
+                </span>
+                <div class="stylrguide-divider"></div>
+            </div>
+            <div class="form-content" *ngIf="!item.collapsed">
+                <div class="flex-row flex-wrap">
+                    <div class="input-group" *ngFor="let field of item.fields">
+                        <label class="text-16-L-B400-MED">{{field.Key || ''}}</label>
+                        <div class="sft100 details-value text-16-L-B400-REG flex-row-wrap">
+                            {{field.value || ''}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

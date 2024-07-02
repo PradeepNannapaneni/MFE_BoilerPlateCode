@@ -1,0 +1,32 @@
+@import "../../styles/partials/colors";
+
+.error-page-container {
+    .error-page {
+        text-align: center;
+
+        .teal-bold {
+            color: $teal-t400;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .text-20 {
+            font-size: 20px;
+        }
+
+        &.text-15 {
+            font-size: 15px;
+        }
+
+        .home-icon {
+            height: 20px;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+
+        .vr-line {
+            font-size: 20px;
+            vertical-align: middle;
+        }
+    }
+}
