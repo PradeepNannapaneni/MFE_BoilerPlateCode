@@ -17,3 +17,4 @@ export const ATTACHMENT_ERROR_FILE_EXTN_MESSAGE = 'File extension not allowed. A
 export const ATTACHMENT_CONTINUE_BTN = 'Continue';
 export const FILE_BYTE_CONVERTER_FACTOR = 1024;
 
+export const CUSTOM_ELEMENT_TAG = 'styleguide';

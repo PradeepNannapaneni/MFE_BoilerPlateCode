@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "utility": {
+    "home": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "../dist/utility",
+            "outputPath": "dist/home",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -32,11 +32,11 @@
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "libraryName": "utility",
+              "path": "extra-webpack.config.js",
+              "libraryName": "home",
               "libraryTarget": "system"
             },
-            "deployUrl": "http://localhost:4202/"
+            "deployUrl": "http://localhost:4203/"
           },
           "configurations": {
             "production": {
@@ -76,10 +76,10 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "utility:build:production"
+              "browserTarget": "home:build:production"
             },
             "development": {
-              "browserTarget": "utility:build:development"
+              "browserTarget": "home:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "utility:build"
+            "browserTarget": "home:build"
           }
         },
         "test": {

@@ -42,8 +42,9 @@
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "@types/webpack-env": "^1.16.2",
     "single-spa": "^5.9.3",
-    "@types/webpack-env": "^1.16.2"
+    "zone.js": "^0.14.7"
   },
   "types": "dist/Org-root-config.d.ts"
 }
