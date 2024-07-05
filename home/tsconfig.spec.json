@@ -5,7 +5,10 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
-    ]
+    ],
+    "paths":{
+      "utility": ["./src/app/declarations/decl.d.ts"]
+    }
   },
   "files": [
     "src/test.ts",

@@ -4,12 +4,11 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
 import { MEDIUM_MODAL_WIDTH } from './constants/constant';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'styleguide-root',
+  templateUrl: './styleguide.component.html',
 })
 
-export class AppComponent {
+export class StyleguideComponent {
 
   title = 'styleguide';
 

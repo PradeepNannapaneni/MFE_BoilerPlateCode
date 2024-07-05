@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AssetUrlPipe } from './pipes/asset-url.pipe';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { StyleguideRoutingModule } from './styleguide-routing.module';
+import { StyleguideComponent } from './styleguide.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -12,10 +12,11 @@ import { TableActionsComponent } from './components/table-actions/table-actions.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReadonlyFormComponent } from './components/readonly-form/readonly-form.component';
+import { CustomElementHelper } from './helpers/custom-element-helper';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    StyleguideComponent,
     ErrorPageComponent,
     InfoDialogComponent,
     LoaderComponent,
@@ -27,11 +28,17 @@ import { ReadonlyFormComponent } from './components/readonly-form/readonly-form.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    StyleguideRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [StyleguideComponent]
 })
-export class AppModule { }
+export default class StyleguideModule { 
+  constructor (private injector: Injector) {
+   CustomElementHelper.defineCustomElements(injector);
+  }
+
+  ngDoBootstrap() {}
+}

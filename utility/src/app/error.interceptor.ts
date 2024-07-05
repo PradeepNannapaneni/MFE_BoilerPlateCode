@@ -12,7 +12,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 tap((response) => {
                     if (response instanceof HttpResponse) {
                         if (response.status === 302) {
-                            window.location.reload();
+                            // window.location.reload();
                         }
                     }
                 }),

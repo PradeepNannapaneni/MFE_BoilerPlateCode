@@ -14,4 +14,4 @@ const routes: Routes = [
     { provide: APP_BASE_HREF, useValue: '/' }
   ]
 })
-export class AppRoutingModule { }
+export class StyleguideRoutingModule { }

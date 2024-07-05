@@ -1,9 +1,7 @@
 import { enableProdMode, NgZone } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { singleSpaAngular, getSingleSpaExtraProviders } from 'single-spa-angular';
-import 'zone.js/dist/zone'; 
-
-import { AppModule } from './app/app.module';
+import StyleguideModule from './app/styleguide.module';
 import { environment } from './environments/environment';
 import { singleSpaPropsSubject } from './single-spa/single-spa-props';
 
@@ -14,10 +12,10 @@ if (environment.production) {
 const lifecycles = singleSpaAngular({
   bootstrapFunction: singleSpaProps => {
     singleSpaPropsSubject.next(singleSpaProps);
-    return platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule(AppModule);
+    return platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule(StyleguideModule);
   },
   template: '<app-root />',
-  NgZone:NgZone,
+  NgZone:NgZone
 });
 
 export const bootstrap = lifecycles.bootstrap;
