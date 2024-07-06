@@ -1,11 +1,6 @@
 import { registerApplication, start, LifeCycles } from "single-spa";
 
-registerApplication({
-  name: "@single-spa/welcome",
-  app: () =>
-    System.import<LifeCycles>( "" ),
-  activeWhen: ["/"],
-});
+
 
 registerApplication({
   name: 'home',
@@ -13,6 +8,12 @@ registerApplication({
   activeWhen: ['/home'],
 });
 
+registerApplication({
+  name: 'styleguide',
+  app: () => System.import('styleguide') as Promise<LifeCycles<any>>,
+  activeWhen: ['/'],
+});
+
 start({
-  urlRerouteOnly: true,
+  urlRerouteOnly: false,
 });

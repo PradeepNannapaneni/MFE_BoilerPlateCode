@@ -11,6 +11,7 @@ export class BookSearchComponent {
 query: string = '';
 
 searchBooks() {
+  console.log('searchBooks', this.query);
   this.search.emit(this.query);
 }
 

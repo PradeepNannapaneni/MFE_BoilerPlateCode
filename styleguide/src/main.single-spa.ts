@@ -4,6 +4,8 @@ import { singleSpaAngular, getSingleSpaExtraProviders } from 'single-spa-angular
 import StyleguideModule from './app/styleguide.module';
 import { environment } from './environments/environment';
 import { singleSpaPropsSubject } from './single-spa/single-spa-props';
+import 'zone.js/dist/zone'; 
+import { NavigationStart, Router } from '@angular/router';
 
 if (environment.production) {
   enableProdMode();
@@ -14,8 +16,10 @@ const lifecycles = singleSpaAngular({
     singleSpaPropsSubject.next(singleSpaProps);
     return platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule(StyleguideModule);
   },
-  template: '<app-root />',
-  NgZone:NgZone
+  template: '<styleguide-root />',
+  Router,
+  NavigationStart,
+  NgZone:NgZone,
 });
 
 export const bootstrap = lifecycles.bootstrap;

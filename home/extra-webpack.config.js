@@ -5,7 +5,7 @@ module.exports = (config, options) => {
   const singleSpaWebpackConfig = singleSpaAngularWebpack(config, options);
 
   singleSpaWebpackConfig.plugins.push(new SystemJSPublicPathWebpackPlugin({
-    systemjsModuleName: 'performance'
+    systemjsModuleName: 'home'
   }));
   
   singleSpaWebpackConfig.externals.push('utility','styleguide');

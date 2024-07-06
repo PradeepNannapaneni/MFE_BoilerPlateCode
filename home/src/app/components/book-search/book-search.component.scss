@@ -1,0 +1,51 @@
+@import "../../../styles.scss";
+
+.search-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height : 100vh;
+
+    .search-bar {
+        position: relative;
+        display: flex;
+        width: 600px; 
+        height: $search-bar-height;
+        background-color: $search-bar-background;
+        border: 1px solid $search-bar-border;
+        border-radius: $search-bar-border-radius;
+
+        &:hover {
+            border-color: $search-bar-hover-border;
+        }
+
+        &:focus-within {
+            border-color: $search-bar-focus-border;
+            box-shadow: 0 0 0 2px rgba(77, 144, 254, 0.2); 
+        }
+
+        input[type="text"] {
+            flex: 1;
+            height: 100%;
+            padding: $search-bar-padding-y $search-bar-padding-x;
+            border: none;
+            background: none;
+            font-size: 16px; 
+            outline: none;
+
+            &::placeholder {
+                color: #9e9e9e; 
+            }
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

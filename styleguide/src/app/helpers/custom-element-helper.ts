@@ -21,12 +21,12 @@ export class CustomElementHelper {
         { control: TableActionsComponent, name: 'table-actions' }
     ];
 
-    static registerCustomElementsFunc = createCustomElement;
-    static registerCustomElements = customElements;
+    static createCustomElementFunc = createCustomElement;
+    static customElementRegistry = customElements;
     static defineCustomElements(injector: Injector) {
         this.elements.forEach(element => {
-            const el = CustomElementHelper.registerCustomElementsFunc(element.control, { injector });
-            CustomElementHelper.registerCustomElements.define(CUSTOM_ELEMENT_TAG + '-' + element.name, el);
+            const el = CustomElementHelper.createCustomElementFunc(element.control, { injector });
+            CustomElementHelper.customElementRegistry.define('styleguide' + '-' + element.name, el);
         });
     }
 }
