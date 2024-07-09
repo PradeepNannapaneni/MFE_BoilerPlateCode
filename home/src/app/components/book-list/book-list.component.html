@@ -1,1 +1,7 @@
-<p>book-list works!</p>
+<div>
+    <div>
+        <styleguide-table [tableData]="bookTableData" [headers]="bookHeaders" [isloaded]="false" [isExportRequired]="false" style="margin: 0 auto; padding: 20px;"
+            (headerClicked)="onHeaderClicked($event)" (pagiationChanged)="paginationChanged($event)"
+            (exportClicked)="exportClicked()" (rowClicked)="getBookDetails($event)"></styleguide-table>
+    </div>
+</div>

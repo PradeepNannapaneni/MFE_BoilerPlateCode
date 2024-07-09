@@ -1,5 +1,4 @@
-import { Component, HostListener, Input, Output, ElementRef, EventEmitter, OnInit } from '@angular/core';
-import { GaAction, GaEventName, ProjectName } from 'src/app/enums/google-analytics.enum';
+import { Component, HostListener, Input, Output, ElementRef, EventEmitter,  } from '@angular/core';
 import { RowAction } from 'src/app/modals/table-data.modal';
 import { GAEvent } from 'utility';
 @Component({
@@ -7,7 +6,7 @@ import { GAEvent } from 'utility';
   templateUrl: './table-actions.component.html',
   styleUrls: ['./table-actions.component.scss']
 })
-export class TableActionsComponent implements OnInit {
+export class TableActionsComponent {
 
   @Input() actionItems!: RowAction[];
   @Input() isCardClosed: boolean = true;
@@ -17,10 +16,6 @@ export class TableActionsComponent implements OnInit {
   gaEventService = GAEvent;
   constructor(private eRef: ElementRef) { }
 
-  ngOnInit(): void {
-    this.gaEventService.subscribeEventToGA(
-      `$(this.moduleName)_$(GaAction.OPEN)_$(GaEventName.THREE_DOTS)_$(ProjectName.DEMO)`, this.moduleName, '', '');
-  }
 
   closeActions() {
     this.closeClick.emit();

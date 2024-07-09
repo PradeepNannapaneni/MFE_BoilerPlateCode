@@ -32,7 +32,7 @@ import { CustomElementHelper } from './helpers/custom-element-helper';
     BrowserAnimationsModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [AssetUrlPipe],
   bootstrap: [StyleguideComponent]
 })
 export default class StyleguideModule { 

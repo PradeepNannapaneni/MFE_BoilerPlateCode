@@ -1,5 +1,5 @@
 <div class="style-table" role="table" aria-label="Destinations" [class.table-min-height]="setMinHeight">
-    <app-loader *ngIf="!isLoaded"></app-loader>
+    <!-- <app-loader *ngIf="!isLoaded"></app-loader> -->
     <div class="flex-table header text-14-L-T400-HEV" role="rowgroup">
         <div class="flex-row p-1" [ngStyle]="{'width':header.calculatedwidth}" [class.first]="first" role="columnheader"
             *ngFor="let header of headers; let first=first" (click)="onHeaderClick(header)">
@@ -14,7 +14,7 @@
         <div *ngIf="tableData?.rows?.length; else noData;">
             <span class="d-flex" *ngFor="let row of tableData.rows; let i=index">
                 <div *ngIf="row.actions?.length" class="action-item-image" (click)="displayActions(i)">
-                    <img [src]="'images/actions_list_vertical.svg' | assetUrl" alt="action_list">
+                    <img src="src/assets/images/actions_list_vertical.svg" alt="action_list">
                 </div>
                 <div class="dropdown-drawer" *ngIf="selectedRowId == i && !closeAction">
                     <app-table-actions [actionItems]="row.actions" [isCardClosed]="closeAction"
@@ -47,7 +47,7 @@
             <div [ngClass]="isExportRequired ? 'icon-set-export' : 'icon-set'" *ngIf="tableData.totalCount">
                 <ng-container *ngIf="isExportRequired">
                     <button class="btn export-icon" (click)="onExportClick()">
-                        <img [src]="images/export.svg | assetUrl" alt="export outline" />
+                        <img src="/assets/images/export.svg" alt="export outline" />
                         <p class="btn-text">Export to CSV</p>
                     </button>
                 </ng-container>
@@ -56,6 +56,8 @@
                         [disabled]="tableData.pageNumber === 1">arrow_left</button>
                     <span class="text-12-L-B400-REG pt-1"> showing records {{fromCount}} to {{toCount}} of
                         {{tableData.totalCount}}</span>
+                        <button class="btn material-icons pagination-icon" (click)="onNextPageCLick()"
+                        [disabled]="tableData.pageNumber === 1">arrow_right</button>
                 </div>
             </div>
         </div>
