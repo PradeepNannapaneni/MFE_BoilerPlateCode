@@ -53,3 +53,7 @@
 .text-20-L-B400-REG {
     @include text-style($black-b400, 20px);
 }
+
+.text-14-L-T400-HEV {
+    @include text-style($teal-t400, 14px, "Mark Pro Heavy");
+}

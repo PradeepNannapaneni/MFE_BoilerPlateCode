@@ -5,7 +5,8 @@ import { AssetUrlPipe } from 'src/app/pipes/asset-url.pipe';
 
 @Component({
   selector: 'app-table',
-  templateUrl: './table.component.html'
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.scss']
 })
 
 export class TableComponent implements OnChanges {
@@ -29,7 +30,7 @@ export class TableComponent implements OnChanges {
   fromCount: number = 0;
   toCount: number = 0;
   selectedRowId: number = 0;
-  closeAction?: boolean;
+  closeAction?: boolean = true;
 
   constructor(private _assetUrlPipe: AssetUrlPipe) { }
 

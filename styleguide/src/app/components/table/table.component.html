@@ -20,7 +20,7 @@
                     <app-table-actions [actionItems]="row.actions" [isCardClosed]="closeAction"
                         (closeClick)="closeActionMenu()" [moduleName]="moduleName"></app-table-actions>
                 </div>
-                <a class="flex-table flex-nowrap text-14-L-B400-REG pb-2 tbale-link" role="rowgroup"
+                <a class="flex-table flex-nowrap text-14-L-B400-REG pb-2 table-link" role="rowgroup"
                     (click)="onRowClick(row)" [ngClass]="row.id ? 'link' : '' ">
                     <div class="flex-row p-1" [ngStyle]="{'width': cell.calculatedwidth}" role="cell"
                         *ngFor="let cell of row.cells; let first=first" (click)="onRowClick('')">
@@ -56,8 +56,8 @@
                         [disabled]="tableData.pageNumber === 1">arrow_left</button>
                     <span class="text-12-L-B400-REG pt-1"> showing records {{fromCount}} to {{toCount}} of
                         {{tableData.totalCount}}</span>
-                        <button class="btn material-icons pagination-icon" (click)="onNextPageCLick()"
-                        [disabled]="tableData.pageNumber === 1">arrow_right</button>
+                        <button class="btn material-icons pagination-icon" (click)="onNextPageClick()"
+                        [disabled]="tableData.totalCount === toCount">arrow_right</button>
                 </div>
             </div>
         </div>

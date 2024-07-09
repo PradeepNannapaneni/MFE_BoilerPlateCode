@@ -3,7 +3,7 @@ import { TableEnum } from "../enums/table.enum";
 
 export const GET_BOOKS = 'https://www.googleapis.com/books/v1/volumes'; 
 export const BOOK_TABLE_HEADERS: TableHeader[] = [
-    { value: 'ID', width: 1 },
+    { value: 'ID', width: 1.5 },
     { value: 'Title', width: 3 },
     { value: 'Author', width: 2 },
     { value: 'Publisher', width: 2 },

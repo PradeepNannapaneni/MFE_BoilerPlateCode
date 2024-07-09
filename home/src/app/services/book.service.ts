@@ -24,12 +24,12 @@ export class BookService {
     getBookTableData(books: Book[], pageNumber: number, sortByHeader: TableHeader): TableData {
         let rows: RowData[] = books.map((book: Book) => {
             let cells: CellData[] = []
-            cells.push({ value: book.id, width: 1 });
+            cells.push({ value: book.id, width: 1.5 });
             cells.push({ value: book.title, width: 3 });
-            cells.push({ value: book.author, width: 1.5 });
-            cells.push({ value: book.publisher, width: 1.5 });
-            cells.push({ value: book.publicationYear.toString(), width: 1 });
-            cells.push({ value: book.pageCount.toString(), width: 1 });
+            cells.push({ value: book.author, width: 2 });
+            cells.push({ value: book.publisher, width: 2 });
+            cells.push({ value: book.publicationYear.toString(), width: 2 });
+            cells.push({ value: book.pageCount.toString(), width: 2 });
             let rowData: RowData = { cells: cells };
             return rowData;
         });
