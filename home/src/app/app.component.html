@@ -1,2 +1,3 @@
 <app-book-search *ngIf="!showResult" (search)="onSearch($event)"></app-book-search>
-<app-book-list *ngIf="showResult" [books]="books" [bookTableData]="bookTableData"></app-book-list>
+<app-book-list *ngIf="showResult" [books]="books" [bookTableData]="bookTableData"
+    (getDetails)="getBookDetails($event)"></app-book-list>

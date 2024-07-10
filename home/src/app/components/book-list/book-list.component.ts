@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from 'src/app/modals/book.modal';
 import { TableData } from 'src/app/modals/table-data.modal';
 import { BOOK_TABLE_HEADERS } from 'src/app/constants/constants';
@@ -14,6 +14,8 @@ export class BookListComponent {
 
   @Input() books: Book[] = [];
   @Input() bookTableData: TableData = {} as TableData;
+
+  @Output() getDetails = new EventEmitter<string>(); 
 
   bookHeaders: TableHeader[] = BOOK_TABLE_HEADERS;
   sortByHeader: TableHeader = this.bookHeaders[0];
@@ -33,7 +35,7 @@ export class BookListComponent {
   console.log('Export Clicked');
   }
 
-  getBookDetails(book: Book) {  
-    console.log('Book Details Clicked', book);
+  getBookDetails(id: string) {  
+    this.getDetails.emit(id);
   }
 }

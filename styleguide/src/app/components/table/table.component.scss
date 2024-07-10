@@ -57,7 +57,7 @@
         justify-content: space-between;
 
         .pagination-icon {
-            font-size: 50px;
+            font-size: 15px;
             color: $teal-t400;
 
             &:disabled {
@@ -88,12 +88,11 @@
                 display: flex;
                 align-items: center;
 
-                &.asc::before {
+                &.asc::after {
                     content: "";
                     border-right: 5px solid transparent;
                     border-left: 5px solid transparent;
-                    border-bottom: 10px solid $teal-t400;
-                    border-top: 10px solid $teal-t400;
+                    border-bottom: 5px solid $teal-t400;
                     margin-right: 5px;
                 }
 
@@ -101,9 +100,8 @@
                     content: "";
                     border-right: 5px solid transparent;
                     border-left: 5px solid transparent;
-                    border-bottom: 10px solid $teal-t400;
-                    border-top: 10px solid $teal-t400;
-                    margin-right: 5px;
+                    border-top: 5px solid $teal-t400;
+                    margin-left: 5px;
                 }
             }
         }
@@ -119,11 +117,6 @@
     @media all and (max-width:$lgBreakpoint) {
         .flex-row {
             width: calc(100%/3) !important;
-
-            &.first {
-                width: 100% !important;
-                border-top: 1px solid $grey-g700;
-            }
         }
     }
 

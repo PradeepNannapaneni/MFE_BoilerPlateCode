@@ -9,6 +9,7 @@ export interface TableData {
 
 export interface RowData {
     cells: CellData[];
+    id: string;
     actions?: string;  
 }
 

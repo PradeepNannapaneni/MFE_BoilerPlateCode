@@ -2,13 +2,15 @@ import { TableHeader } from "../modals/table-data.modal";
 import { TableEnum } from "../enums/table.enum";
 
 export const GET_BOOKS = 'https://www.googleapis.com/books/v1/volumes'; 
+export const GET_BOOK_DETAILS = 'https://www.googleapis.com/books/v1/volumes/';
+
 export const BOOK_TABLE_HEADERS: TableHeader[] = [
     { value: 'ID', width: 1.5 },
-    { value: 'Title', width: 3 },
+    { value: 'Title', width: 3, isSortable: true},
     { value: 'Author', width: 2 },
     { value: 'Publisher', width: 2 },
     { value: 'Published Date', width: 2 },
-    { value: 'Page Count', width: 2 }
+    { value: 'Page Count', width: 2, isSortable: true }
 ];
 
 export const TABLE_MAPPING = [
@@ -20,4 +22,4 @@ export const TABLE_MAPPING = [
     {'mapping': TableEnum.PageCount, 'srlNo': 5, 'displayName': 'Page Count', 'width': 2, 'hidden': false}
 ];
 
-export const TABLE_ROWS_PER_PAGE = 5;
+export const TABLE_ROWS_PER_PAGE = 10;

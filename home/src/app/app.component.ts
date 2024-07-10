@@ -4,6 +4,7 @@ import { finalize } from 'rxjs';
 import { Book } from './modals/book.modal';
 import { TableData } from './modals/table-data.modal';
 import { BOOK_TABLE_HEADERS } from './constants/constants';
+import { BookDetail, BookDetailData } from './modals/book-detail.modal';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent {
   isloading: boolean = false;
   books: Book[] = [];
   bookTableData: TableData = {} as TableData;
+  bookDetailData : BookDetailData = {} as BookDetailData;
 
   onSearch(query: string) {
     this.showResult = true
@@ -35,16 +37,20 @@ export class AppComponent {
               title: element.volumeInfo?.title,
               author: element.volumeInfo?.authors ? element.volumeInfo?.authors[0] : '-',
               publisher: element.volumeInfo?.publisher ?? '-',
-              publicationYear: element.volumeInfo?.publishedDate.toString() ?? '-',
+              publicationYear: element.volumeInfo?.publishedDate?.toString() ?? '-',
               pageCount: element.volumeInfo?.pageCount
             });
         });
-        this.parseBookData(this.books);
+        this.bookTableData = this._bookService.getBookTableData(this.books, 1, BOOK_TABLE_HEADERS[1]);
       });
   }
 
-  parseBookData(books: Book[]) {
-    this.bookTableData = this._bookService.getBookTableData(books, 1, BOOK_TABLE_HEADERS[1]);
+  getBookDetails(id: string) {
+    this._bookService.bookDetails(id).pipe(finalize(() => { this.isloading = true }))
+      .subscribe((data: BookDetail) => {
+        this.bookDetailData = this._bookService.getBookDetailsData(data);
+        console.log(this.bookDetailData);
+      });
   }
 
 }
