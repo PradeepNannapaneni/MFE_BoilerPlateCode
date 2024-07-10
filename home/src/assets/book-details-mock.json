@@ -1,0 +1,109 @@
+{
+    "kind": "books#volume",
+    "id": "huPLEAAAQBAJ",
+    "etag": "hKmo7cg3+18",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/huPLEAAAQBAJ",
+    "volumeInfo": {
+        "title": "Angular Projects",
+        "subtitle": "Build modern web apps in Angular 16 with 10 different projects and cutting-edge technologies",
+        "authors": [
+            "Aristeidis Bampakos"
+        ],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2023-07-19",
+        "description": "<p><b>Take Angular to the next level – build captivating real-world applications while exploring modern web technologies and best practices Purchase of the print or Kindle book includes a free PDF eBook</b></p>Key Features<ul><li>Explore Angular's capabilities for cross-platform app development</li><li>Combine Angular with popular web technologies such as Nx monorepos, server-side rendering, and progressive web apps</li><li>Build your own libraries and schematics using Angular CDK and Angular CL</li></ul>Book DescriptionAngular Projects isn't like other books on Angular – this is a project-based guide that helps budding Angular developers get hands-on experience while developing cutting-edge applications. In this updated third edition, you’ll master the essential features of the framework by creating ten different real-world web applications. Each application will demonstrate how to integrate Angular with a different library and tool, giving you a 360-degree view of what the Angular ecosystem makes possible. Updated to the newest version of Angular, the book has been revamped to keep up with the latest technologies. You’ll work on a PWA weather application, a mobile photo geotagging application, a component UI library, and other exciting projects. In doing so, you’ll implement popular technologies such as Angular Router, Scully, Electron, Angular service workers, Jamstack, NgRx, and more. By the end of this book, you will have the skills you need to build Angular apps using a variety of different technologies according to your or your client’s needs.What you will learn<ul><li>Set up Angular applications using Angular CLI and Nx Console</li><li>Create a personal blog with Jamstack, Scully plugins, and SPA techniques</li><li>Build an issue management system using typed reactive forms</li><li>Use PWA techniques to enhance user experience</li><li>Make SEO-friendly web pages with server-side rendering</li><li>Create a monorepo application using Nx tools and NgRx for state management</li><li>Focus on mobile application development using Ionic</li><li>Develop custom schematics by extending Angular CLI</li></ul>Who this book is for<p>This book is for developers with beginner-level Angular experience who want to become proficient in using essential tools and dealing with the various use cases in Angular. Beginner-level knowledge of web application development and basic experience of working with ES6 or TypeScript is essential before you dive in. This book focuses on practical applications of Angular. If you want to deepen your understanding of this framework, we recommend that you also look at Learning Angular from the same author.</p>",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_10",
+                "identifier": "1803243309"
+            },
+            {
+                "type": "ISBN_13",
+                "identifier": "9781803243306"
+            }
+        ],
+        "readingModes": {
+            "text": true,
+            "image": true
+        },
+        "pageCount": 312,
+        "printedPageCount": 313,
+        "printType": "BOOK",
+        "categories": [
+            "Computers / Internet / Web Programming",
+            "Computers / Languages / JavaScript",
+            "Computers / Internet / Web Design"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.7.4.0.preview.3",
+        "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+        },
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/publisher/content?id=huPLEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71CJjVLAU8QTNpiJKJ94wIpcTb3C3d8C-tyw7u6fvvuzIheKXNv4zxrE4UA9A2tSvzlIJKTqoxGBgstN2sCMfjSKZbgNu0IdOffEU2j6_nuKqp5jIiNA2LIOTZFm0HhjfbHyGmW&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/publisher/content?id=huPLEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73V156liTuQz8HB4fQm8PJVFv1669M8lPWXpQ_0HNJMqpef1Z9kdmgA3voHJhAFp4hiHHjFGY0jnOMkHz6tBRaNv0mzs4Vp7i_-HQXShGlsi8vjwi_VrZekkRXqobc6_o5ERsAd&source=gbs_api",
+            "small": "http://books.google.com/books/publisher/content?id=huPLEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70N5KcK-_HxeYVL7ebSlNpVbW8fTE4KKg4SELQaiYC39uWvX3Yn2AYAMnhaX8At2jH-JxiApBIbTq69WryeX9L3ocW-GXbi0ndQNJSZWYLnYgFwaexPh_hFCHn4RhORuKTpdipG&source=gbs_api",
+            "medium": "http://books.google.com/books/publisher/content?id=huPLEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE732cHJdrjaxacOqptv8RPLWdiMIZsLPEpHrxp3LgixZZbnHYWB8MDK6lTDP7r1CkQNQ9Q80XnTUFi45fVD9l2T1IF4UWjsF4P1SxKY0sJND0VYUFvSrzGgAxtWejesfZMs-Dc7I&source=gbs_api",
+            "large": "http://books.google.com/books/publisher/content?id=huPLEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70tsI1XO5ShVgNVqYql_h2u0YgocNR_-PrOh835ibOnON0RJqvFNGqlPYHlJgYl708xSHLprqgfDHG8PfdVWKJv8GFntHNP-dTbGAGicneFWbpnVynVf29J7b8V50M_hogpBdJi&source=gbs_api",
+            "extraLarge": "http://books.google.com/books/publisher/content?id=huPLEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70twF3Ldw2neD6RC-wlcqJuiIzRLyywWnvc8RDmTlyhOeeBoKCoBUIQtiICGMr1JOpCJFEBIz7grKwXvAvuvR0-F0JTEqFVIFxJzBjxXSTtjcD3YRJfy3ae-7X5mrQ2wu0tXqwY&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.au/books?id=huPLEAAAQBAJ&hl=&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=huPLEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=huPLEAAAQBAJ"
+    },
+    "layerInfo": {
+        "layers": [
+            {
+                "layerId": "geo",
+                "volumeAnnotationsVersion": "8"
+            }
+        ]
+    },
+    "saleInfo": {
+        "country": "AU",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+            "amount": 51.69,
+            "currencyCode": "AUD"
+        },
+        "retailPrice": {
+            "amount": 33.5,
+            "currencyCode": "AUD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=huPLEAAAQBAJ&rdid=book-huPLEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+            {
+                "finskyOfferType": 1,
+                "listPrice": {
+                    "amountInMicros": 51690000,
+                    "currencyCode": "AUD"
+                },
+                "retailPrice": {
+                    "amountInMicros": 33500000,
+                    "currencyCode": "AUD"
+                },
+                "giftable": true
+            }
+        ]
+    },
+    "accessInfo": {
+        "country": "AU",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+            "isAvailable": true
+        },
+        "pdf": {
+            "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=huPLEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+    }
+}

@@ -136,7 +136,7 @@ export class BookService {
 
          let bookDetailData: BookDetailData = {
             sections: sections,
-            imageLink: bookDetails.volumeInfo.imageLinks?.thumbnail ?? '',
+            imageLink: bookDetails.volumeInfo.imageLinks?.thumbnail?.replace('https', 'http') ?? '',
             title: bookDetails.volumeInfo.title ?? '',
             authors: bookDetails.volumeInfo.authors.join(', '),
             description: bookDetails.volumeInfo.description ?? ''

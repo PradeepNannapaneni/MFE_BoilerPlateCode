@@ -12,12 +12,12 @@
                             [class]="item.collapsed ? 'fa-chevron-up' : 'fa-chevron-down' "></span>
                     </span>
                 </span>
-                <div class="stylrguide-divider"></div>
+                <div class="styleguide-divider"></div>
             </div>
             <div class="form-content" *ngIf="!item.collapsed">
                 <div class="flex-row flex-wrap">
                     <div class="input-group" *ngFor="let field of item.fields">
-                        <label class="text-16-L-B400-MED">{{field.Key || ''}}</label>
+                        <label class="text-16-L-B400-MED">{{field.key || ''}}</label>
                         <div class="sft100 details-value text-16-L-B400-REG flex-row-wrap">
                             {{field.value || ''}}
                         </div>

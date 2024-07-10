@@ -15,16 +15,13 @@ export class AppComponent {
   constructor(private _bookService: BookService) { }
 
   title = 'home';
-  showResult: boolean = false;
+  showSearch: boolean = true;
   isloading: boolean = false;
   books: Book[] = [];
   bookTableData: TableData = {} as TableData;
   bookDetailData : BookDetailData = {} as BookDetailData;
-
-  onSearch(query: string) {
-    this.showResult = true
-    this.getSearchresults(query)
-  }
+  showDetails: boolean = false;
+  showList: boolean = false;
 
   getSearchresults(query: string) {
     this.isloading = true;
@@ -42,6 +39,8 @@ export class AppComponent {
             });
         });
         this.bookTableData = this._bookService.getBookTableData(this.books, 1, BOOK_TABLE_HEADERS[1]);
+        this.showSearch = false;
+        this.showList = true;
       });
   }
 
@@ -49,7 +48,9 @@ export class AppComponent {
     this._bookService.bookDetails(id).pipe(finalize(() => { this.isloading = true }))
       .subscribe((data: BookDetail) => {
         this.bookDetailData = this._bookService.getBookDetailsData(data);
-        console.log(this.bookDetailData);
+        this.showList = false;
+        this.showDetails = true;
+        console.log(this.bookDetailData,this.showDetails);
       });
   }
 

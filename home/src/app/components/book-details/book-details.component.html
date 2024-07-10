@@ -1,1 +1,12 @@
-<p>book-details works!</p>
+<div class="form-container mt-4 position-relative">
+    <div class="d-flex flex-column align-items-start">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <div class="d-flex align-items-center justify-content-between">
+                <span class="text-20-L-T400-HEV">{{bookDetailData.title}}</span>
+            </div>
+            <!-- <img class="title-cover" src=url(bookDetailData.imageLink) alt=""> -->
+        </div>
+        <div class="text-20-L-B400-REG"> by {{bookDetailData.authors}}</div>
+        <styleguide-readonly-form [readOnlyFormData]="bookDetailData.sections"></styleguide-readonly-form>
+    </div>
+</div>

@@ -12,3 +12,8 @@ $search-bar-padding-x: 10px;
 $search-bar-height: 34px;
 $search-bar-border-radius: 24px;
 
+$csp-policy: "default-src 'self' https: localhost:; img-src 'self' https://books.google.com;";
+
+body {
+  content: $csp-policy;
+}
