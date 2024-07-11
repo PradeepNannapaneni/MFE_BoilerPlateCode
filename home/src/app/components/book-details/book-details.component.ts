@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BookDetailData } from 'src/app/modals/book-detail.modal';
 
 @Component({
@@ -9,4 +9,15 @@ import { BookDetailData } from 'src/app/modals/book-detail.modal';
 export class BookDetailsComponent {
 
   @Input() bookDetailData: BookDetailData = {} as BookDetailData;
+
+  @Output() showSearch = new EventEmitter<void>();
+  @Output() showList = new EventEmitter<void>();
+
+  backToSearch() {
+    this.showSearch.emit();
+  }
+
+  backToList() {
+    this.showList.emit();
+  }
 }

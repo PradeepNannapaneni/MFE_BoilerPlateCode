@@ -1,7 +1,7 @@
 <div class="book-list-container">
     <div class="book-list" >
         <styleguide-table [tableData]="bookTableData" [headers]="bookHeaders" [isloaded]="false" [isExportRequired]="false" style="margin: 0 auto; padding: 20px;"
-            (headerClicked)="onHeaderClicked($event.detail)" (paginationChanged)="paginationChanged($event)"
+            (headerClicked)="onHeaderClicked($event.detail)" (paginationChanged)="paginationChanged($event.detail)"
             (exportClicked)="exportClicked()" (rowClicked)="getBookDetails($event.detail)"></styleguide-table>
     </div>
 </div>

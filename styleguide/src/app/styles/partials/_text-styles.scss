@@ -57,3 +57,7 @@
 .text-14-L-T400-HEV {
     @include text-style($teal-t400, 14px, "Mark Pro Heavy");
 }
+
+.text-20-L-T400-HEV {
+    @include text-style($teal-t400, 20px, "Mark Pro Heavy");
+}

@@ -7,6 +7,7 @@
 
 .panel {
     cursor: pointer;
+    float: right;
 }
 
 .input-group {
@@ -20,6 +21,8 @@
 }
 
 .form {
+    display: flex;
+    flex-flow: column;
     .form-section {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -38,22 +41,22 @@
             .flex-row,
             .form-row {
                 display: flex;
-                flex-direction: row;
-                gap: 20px;
+                flex-wrap: wrap;
+                gap: 15px;
 
                 .input-group {
-                    display: flex;
+                    display: inline-block;
                     flex-direction: column;
-                    margin: 10px 0px;
-
                     label {
-                        margin-bottom: 1rem;
-
+                        margin-top: 1rem;
+                        margin-bottom: 0;
                     }
 
-                    .form-control:focus {
-                        box-shadow: none;
-                        border: 1px solid $green-g400;
+                    .form-control {
+                        margin: .5rem 0 !important;
+                        &focus {
+                            box-shadow: none;
+                        }
                     }
 
                     input {
@@ -64,6 +67,7 @@
                         position: absolute;
                         top: 45px;
                         right: 70px;
+                        margin-top: 0.5 rem;
                     }
 
                     .material-icons.icons.right {
@@ -78,6 +82,7 @@
                         border-top: none;
                         border-bottom: none;
                         border-right: none;
+                        margin-top: 0.5 rem;
                     }
 
                     .flex-radio {

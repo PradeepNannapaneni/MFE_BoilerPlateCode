@@ -1,8 +1,11 @@
 <div class="form-container mt-4 position-relative">
-    <div class="d-flex flex-column align-items-start">
+    <div class="book-list d-flex flex-column align-items-start">
         <div class="d-flex align-items-center justify-content-between w-100">
             <div class="d-flex align-items-center justify-content-between">
                 <span class="text-20-L-T400-HEV">{{bookDetailData.title}}</span>
+                <span class="text-14-L-T400-HEV links" (click)="backToSearch()">Go back to Search</span>
+                <br>
+                <span class="text-14-L-T400-HEV links" (click)="backToList()">Go back to List</span>
             </div>
             <!-- <img class="title-cover" src=url(bookDetailData.imageLink) alt=""> -->
         </div>

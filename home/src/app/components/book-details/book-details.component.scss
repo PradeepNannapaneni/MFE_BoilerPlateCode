@@ -1,8 +1,21 @@
-.form-container {
-    min-height: 390px;
-    .title-cover {
-        width: 40px;
-        height: 40px;
+.form-container  {
+    background-image: url(https://russellcountylibrary.com/wp-content/uploads/2020/01/RCPL-FindRead-1920x1080-1.jpg);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .book-list {
+        width: 90%;
+        height: 90%;
         border-radius: 5px;
+        background-color: white;
+        padding: 20px;
     }
+}
+
+.links {
+    display: flex;
+    float: right;
+    cursor: pointer;
 }

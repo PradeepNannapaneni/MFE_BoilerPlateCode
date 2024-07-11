@@ -1,4 +1,5 @@
 <app-book-search *ngIf="showSearch" (search)="getSearchresults($event)"></app-book-search>
 <app-book-list *ngIf="showList" [books]="books" [bookTableData]="bookTableData"
     (getDetails)="getBookDetails($event)"></app-book-list>
-<app-book-details *ngIf="showDetails" [bookDetailData]="bookDetailData"></app-book-details>
+<app-book-details *ngIf="showDetails" [bookDetailData]="bookDetailData" (showSearch)="enableSearch()"
+    (showList)="enableList()"></app-book-details>

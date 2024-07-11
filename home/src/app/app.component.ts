@@ -50,8 +50,19 @@ export class AppComponent {
         this.bookDetailData = this._bookService.getBookDetailsData(data);
         this.showList = false;
         this.showDetails = true;
-        console.log(this.bookDetailData,this.showDetails);
       });
+  }
+
+  enableSearch(){
+    this.showDetails = false;
+    this.showList = false;
+    this.showSearch = true;
+  }
+
+  enableList(){   
+    this.showDetails = false;
+    this.showList = true;
+    this.showSearch = false;
   }
 
 }
