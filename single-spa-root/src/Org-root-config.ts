@@ -9,6 +9,12 @@ registerApplication({
 });
 
 registerApplication({
+  name: 'react',
+  app: () => System.import('reactApp') as Promise<LifeCycles<any>>,
+  activeWhen: ['/react'],
+});
+
+registerApplication({
   name: 'styleguide',
   app: () => System.import('styleguide') as Promise<LifeCycles<any>>,
   activeWhen: ['/'],
