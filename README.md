@@ -37,7 +37,7 @@
 ---
 
 ## 4. Home
-**Description:** An Angular app showcasing components and services from the styleguide and Utility.
+**Description:** An Angular app showcasing the usage of components and services from the styleguide and Utility.
 
 ### Components:
 - **BookDetailsComponent:** Shows detailed book info and navigation options using `ReadonlyFormComponent` from the Styleguide.
