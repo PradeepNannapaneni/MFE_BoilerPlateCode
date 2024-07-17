@@ -1,19 +1,39 @@
 # Error Page Component
 
-The **Error Page Component** is an Angular component designed to display user-friendly error messages. It is useful for handling various errors throughout your application and guiding users back to the home page.
+## Summary
+
+The **Error Page Component** is an Angular component designed to display error messages to users. It provides customizable titles, messages, and contact instructions, making it easy to handle error states in your application.
 
 ## Features
 
-- Displays customizable error title, message, and contact information.
-- Provides a button for navigation back to the home page.
-- Uses predefined constants for consistent error messaging.
+- Displays a customizable error title.
+- Shows a detailed error message.
+- Provides instructions for contacting support.
+- Allows navigation back to the home page.
 
-## Usage 
+## Inputs
+
+| Input            | Type   | Default Value                | Description                          |
+|------------------|--------|------------------------------|--------------------------------------|
+| `errorTitle`     | string | `PERMISSION_REQUIRED`        | Title of the error.                 |
+| `errorMessage`   | string | `UNAUTHORISED_ERROR_MESSAGE` | Detailed error message.             |
+| `contactMessage`  | string | `SERVICE_DESK_TO_ENABLE_ACCESS` | Instructions for contacting support. |
+
+## Methods
+
+### `goToHomePage()`
+
+Redirects the user to the home page.
+
+## Example Usage
+
+To use the `ErrorPageComponent`, simply include it in your template and pass the required inputs.
+
+**app.component.html**
+
 ```html
 <styleguide-error-page 
-  [errorTitle]="'Your Error Title'" 
-  [errorMessage]="'Detailed error message here.'" 
-  [contactMessage]="'Contact your service desk for assistance.'">
+  [errorTitle]="'Access Denied'" 
+  [errorMessage]="'You do not have permission to view this page.'" 
+  [contactMessage]="'Please contact the support team for assistance.'">
 </styleguide-error-page>
-```
-

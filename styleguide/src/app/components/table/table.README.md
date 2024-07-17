@@ -1,49 +1,127 @@
 # Table Component
+
 ## Summary
 
-The **TableComponent** is a reusable Angular component designed to display tabular data with features like sorting, pagination, and dynamic cell rendering.
+The **Table Component** is an Angular component designed to display tabular data with interactive features such as sorting, pagination, and action buttons. It efficiently manages the rendering of complex data structures while providing a clean user interface.
 
-## Key Features:
-- Inputs:
-    - Accepts tableData, headers, and flags to control display behavior.
+## Features
 
-- Outputs:
-    - Emits events for header clicks, pagination changes, row clicks, cell clicks, and export actions.
+- Displays dynamic tabular data with customizable headers and rows.
+- Supports sorting on headers with visual indicators.
+- Pagination controls for navigating through large datasets.
+- Action buttons for each row with customizable actions.
+- Conditional rendering for loading states and no data scenarios.
 
-- Sorting:
-    - Allows sorting of columns by toggling sort direction on header clicks.
+## Inputs
 
-- Pagination:
-    - Calculates and displays the current set of records based on the active page.
+| Input                  | Type              | Default Value         | Description                                  |
+|------------------------|-------------------|-----------------------|----------------------------------------------|
+| `tableData`           | `TableData`       | `undefined`           | The data to be displayed in the table.      |
+| `headers`              | `Header[]`        | `undefined`           | An array of headers defining the table structure. |
+| `isLoaded`             | `boolean`         | `false`               | Indicates if the table data is loaded.      |
+| `disableAllButtons`    | `boolean`         | `false`               | Disables all action buttons in the table.   |
+| `isExportRequired`     | `boolean`         | `true`                | Indicates if export functionality is required. |
+| `fromDetails`          | `boolean`         | `false`               | Indicates if the table is accessed from details view. |
+| `setMinHeight`         | `boolean`         | `true`                | Sets a minimum height for the table.        |
+| `moduleName`           | `string`          | `undefined`           | The name of the module using the table.     |
 
-- Dynamic Width Calculation:
-    - Computes widths for headers and cells based on specified widths for responsive design.
+## Outputs
 
-## Summary of Functions
-- `ngOnChanges()`: Updates headers, rows, and pagination on input changes.
-- `onExportClick()`: Emits event for export action.
-- `onHeaderClick(header: Header)`: Toggles sort direction and emits header click event.
-- `onPreviousPageClick()`: Navigates to the previous page if possible.
-- `onNextPageClick()`: Navigates to the next page if possible.
-- `onRowClick(row: RowData)`: Emits event with clicked row's ID.
-- `onCellClick(id: string)`: Emits event with clicked cell's ID.
-- `onButtonClick(payload: any)`: Emits event with button click payload.
-- `setHeaders()`: Calculates header widths and transforms images.
-- `setRows()`: Calculates cell widths and transforms images.
-- `setPagination()`: Calculates the current displayed record range.
-- `displayActions(index: number)`: Opens action menu for selected row.
-- `closeActionMenu()`: Closes the action menu.
+| Output                | Type               | Description                          |
+|-----------------------|--------------------|--------------------------------------|
+| `headerClicked`       | `EventEmitter`      | Emits the header clicked event.      |
+| `paginationChanged`   | `EventEmitter`      | Emits the pagination change event.   |
+| `rowClicked`          | `EventEmitter`      | Emits the clicked row's ID.          |
+| `cellClicked`         | `EventEmitter`      | Emits the clicked cell's ID.         |
+| `exportClicked`       | `EventEmitter`      | Emits the export action event.       |
 
-## Usage
+## Methods
+
+### `ngOnChanges()`
+
+This lifecycle method is triggered when any data-bound input properties change. It updates the headers and rows, and sets pagination based on the latest `tableData`.
+
+### `onExportClick()`
+
+Emits the `exportClicked` event when the export button is clicked.
+
+### `onHeaderClick(header: Header)`
+
+Handles the click event on the header, toggling sorting order and emitting the `headerClicked` event.
+
+- **Parameters:**
+  - `header`: The clicked header to toggle sorting.
+
+### `onPreviousPageClick()`
+
+Decrements the current page number and emits the `paginationChanged` event if not on the first page.
+
+### `onNextPageClick()`
+
+Increments the current page number and emits the `paginationChanged` event if there are more records to display.
+
+### `onRowClick(row: RowData)`
+
+Emits the `rowClicked` event with the clicked row's ID.
+
+- **Parameters:**
+  - `row`: The clicked row's data.
+
+### `onCellClick(id: string)`
+
+Emits the `cellClicked` event with the clicked cell's ID.
+
+- **Parameters:**
+  - `id`: The ID of the clicked cell.
+
+### `onButtonClick(payload: any)`
+
+Emits the `cellClicked` event with the payload from the clicked button.
+
+- **Parameters:**
+  - `payload`: The data associated with the button click.
+
+### `setHeaders()`
+
+Calculates the width of each header based on the total column width and transforms any images using the `AssetUrlPipe`.
+
+### `setRows()`
+
+Calculates the width of each cell in the rows and transforms any images using the `AssetUrlPipe`.
+
+### `setPagination()`
+
+Calculates the `fromCount` and `toCount` for pagination display based on the current page number and page size.
+
+### `displayActions(index: number)`
+
+Displays the action menu for the selected row.
+
+- **Parameters:**
+  - `index`: The index of the selected row.
+
+### `closeActionMenu()`
+
+Closes the action menu for the selected row.
+
+## Example Usage
+
+To use the `TableComponent`, include it in your template and provide the required inputs.
+
+**app.component.html**
+
 ```html
 <styleguide-table 
-        [tableData]="myTableData" 
-        [headers]="myHeaders" 
-        [isLoaded]="true" 
-        (headerClicked)="onHeaderClick($event)"
-        (rowClicked)="onRowClick($event)"
-        (exportClicked)="onExportClick()">
+  [tableData]="myTableData"
+  [headers]="myHeaders"
+  [isLoaded]="true"
+  (headerClicked)="onHeaderClick($event)"
+  (paginationChanged)="onPaginationChange($event)"
+  (rowClicked)="onRowClick($event)"
+  (cellClicked)="onCellClick($event)"
+  (exportClicked)="onExportClick()">
 </styleguide-table>
+
 ```
 
 ## Sample Inputs 

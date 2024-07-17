@@ -1,14 +1,20 @@
 # No Data Component
+
 ## Summary
 
-The **No Data Component** is an Angular component that displays a message when no data is available to show. It provides a simple and consistent way to inform users about the absence of data.
+The **No Data Component** is an Angular component that displays a message when there is no data available to show. It helps improve user experience by providing clear feedback in empty states.
 
 ## Features
 
-- Displays a customizable message indicating that no data is available.
-- Easy integration into any part of the Angular application.
+- Simple and customizable component for displaying no data messages.
+- Can be easily integrated into various parts of the application.
 
-## Usage
+## Example Usage
+
+To use the `NoDataComponent`, simply include it in your template where data might be absent.
+
+**app.component.html**
+
 ```html
-<app-no-data *ngIf='!data.length'></app-no-data>
+<styleguide-no-data *ngIf='!data.length'></styleguide-no-data>
 ```

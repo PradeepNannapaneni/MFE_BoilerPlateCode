@@ -2,14 +2,20 @@
 
 ## Summary
 
-The **Loader Component** is an Angular component that displays a loading spinner to indicate that content is being processed or loaded. It enhances user experience by providing visual feedback during asynchronous operations.
+The **Loader Component** is an Angular component that provides a visual indication of loading processes in your application. It enhances user experience during data fetching or other asynchronous operations.
 
 ## Features
 
-- Displays a customizable loading spinner.
-- Simple integration with any part of the Angular application.
+- Simple and customizable loader component.
+- Displays a spinner during loading operations.
+- Easy integration into various parts of the application.
 
-## Usage
+## Example Usage
+
+To use the `LoaderComponent`, simply include it in your template where loading is needed.
+
+**app.component.html**
+
 ```html
 <styleguide-loader *ngIf='isLoading'></styleguide-loader>
-```
+

@@ -1,17 +1,29 @@
 # Readonly Form Component
+
 ## Summary
 
-The **Readonly Form Component** is an Angular component designed to display structured read-only form data in a collapsible format. It organizes data into sections and allows users to expand or collapse sections to view detailed information.
+The **Readonly Form Component** is an Angular component designed to display form data in a read-only format. It presents structured data in sections, allowing users to expand or collapse sections as needed.
 
 ## Features
 
-- Displays form data sections dynamically based on input.
-- Collapsible sections for better user experience.
-- Supports custom styling to fit the application's design.
+- Displays an array of form data organized into sections.
+- Allows toggling of section visibility (expand/collapse).
+- Customizable display properties for each section.
 
-## Usage
+## Inputs
+
+| Input               | Type               | Default Value              | Description                          |
+|---------------------|--------------------|----------------------------|--------------------------------------|
+| `readOnlyFormData`  | `ReadOnlyFormData[]` | `[]`                       | An array of data to be displayed in the form. |
+
+## Example Usage
+
+To use the `ReadonlyFormComponent`, simply include it in your template and pass the required input.
+
+**app.component.html**
+
 ```html
-<styleguide-readonly-form [readOnlyFormData]="yourFormData"></styleguide-readonly-form>
+<styleguide-readonly-form [readOnlyFormData]="formData"></styleguide-readonly-form>
 ```
 
 ## Sample readOnlyFormData
