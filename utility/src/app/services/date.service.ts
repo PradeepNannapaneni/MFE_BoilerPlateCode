@@ -1,7 +1,6 @@
 import { DatePipe } from "@angular/common";
 import * as moment from 'moment';
 import { DATE_REGEX } from "../constants/constants";
-import { interval } from "rxjs";
 
 export class DateService {
     static getCurrentDate(format?: string, utc?: boolean): string {
